@@ -1,0 +1,38 @@
+Recursion 
+-----------------------
+
+Part 1
+-------
+Recursion: when a function calls itself until a specific condition is met.
+
+Base condition: The condtion which stop the recursive call
+
+Recursion tree: shorter version of diagramatic representation
+
+Subset sum - sum of elements in a subset of an array in sorted order
+----------
+Two methods: Power set method and recursion method
+Power set method
+-----------------
+for n element array
+for(i: 0 -> 2^n-1) {   // max combination 000, 001, 010, 011, ...
+    sum = 0;
+    for(j: 0 -> n-1) {
+        if((i & (1 << j) != 0)
+        sum += arr[j];
+    }
+    res.push(sum);
+}
+
+
+Recursion Method
+----------------
+fun(arr, index, sum) {
+    if(index == sizeof(arr)) {
+        res.push(sum);
+        return;
+    }
+
+    fun(arr, index+1, sum + arr[index])
+    fun(arr, index+1, sum)
+}
